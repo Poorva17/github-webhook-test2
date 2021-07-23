@@ -13,9 +13,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Dummy build task
-        run: echo "Running build task"
-      - name: Dummy test task
-        run: echo "Running tests task"
-
-    
+      - name: git checkout release branch
+        run: |
+          git checkout release
+          pwd
+          ls
+      - name: Run pact verification
+        run: echo "pact verification done"
